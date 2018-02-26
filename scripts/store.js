@@ -39,6 +39,14 @@ const store = (function() {
     this.items.splice(newId, 1);
   };
 
+  const toggleCheckedFilter = function() {
+    this.hideCheckedItems = !this.hideCheckedItems;
+  }
+
+  const setSearchTerm = function(val) {
+    this.searchTerm = val;
+  }
+
 
   const items = [
     { id: cuid(), name: 'apples', checked: false },
@@ -56,7 +64,9 @@ const store = (function() {
     findById,
     findAndToggleChecked,
     findAndUpdateName,
-    findAndDelete
+    findAndDelete,
+    toggleCheckedFilter,
+    setSearchTerm
   };
         
 }());
